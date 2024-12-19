@@ -66,6 +66,16 @@
     "type": "class",
     "named": true,
     "fields": {
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "classBody",
+            "named": true
+          }
+        ]
+      },
       "inherited": {
         "multiple": false,
         "required": false,
@@ -86,7 +96,12 @@
           }
         ]
       }
-    },
+    }
+  },
+  {
+    "type": "classBody",
+    "named": true,
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,

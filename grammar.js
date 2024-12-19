@@ -92,13 +92,11 @@ module.exports = grammar({
         ':',
         field("inherited", $.identifier)
       )),
-      optional(seq(
-        '{',
-        repeat($.entry),
-        '}'
-      )),
+      optional(field("body", $.classBody)),
       ';'
     ),
+
+    classBody: $ => seq('{', repeat($.entry), '}'),
 
     deleteClass: $ => seq(
       'delete', $.identifier, ';'
