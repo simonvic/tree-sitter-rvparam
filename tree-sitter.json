@@ -6,6 +6,8 @@
       "scope": "source.rvparam",
       "path": ".",
       "file-types": ["cpp", "hpp", "cfg", "rvmat"],
+      "highlights": "queries/highlights.scm",
+      "tags": "queries/tags.scm",
       "injection-regex": "^rvparam$"
     }
   ],
