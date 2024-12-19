@@ -5,7 +5,7 @@
       "camelcase": "RVParam",
       "scope": "source.rvparam",
       "path": ".",
-      "file-types": null,
+      "file-types": ["cpp", "hpp", "cfg", "rvmat"],
       "injection-regex": "^rvparam$"
     }
   ],
