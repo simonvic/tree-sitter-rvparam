@@ -6,14 +6,15 @@
 (string) @string
 (quoteEscape) @string.escape
 
-
 (identifier) @variable
+(class name: (_) @type)
+(class inherited: (_) @type)
 
 [ "=" "+=" "-=" ] @operator
 
 [ "[]" "{" "}" ] @punctuation.bracket
 
-[ "," ";" ] @punctuation.delimiter
+[ "," ";" ":" ] @punctuation.delimiter
 
 (string ["\"" "\""] @punctuation.delimiter)
 
