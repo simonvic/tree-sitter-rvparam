@@ -10,8 +10,107 @@
 module.exports = grammar({
   name: "rvparam",
 
+  supertypes: $ => [
+    $.param,
+    $.literal
+  ],
+
+  word: $ => $.identifier,
+
+  extras: $ => [
+    /\s/, // whitespaces do matters, but whatever
+    $.commentLine,
+    $.commentBlock
+  ],
+
   rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => "hello"
+    compilationUnit: $ => repeat($.param),
+
+    commentLine: _ => token(seq('//', /[^\n]*/)),
+
+    // kindly borrowed from https://github.com/tree-sitter/tree-sitter-java/blob/master/grammar.js#L1291C5-L1297C8
+    commentBlock: _ => token(seq(
+      '/*',
+      /[^*]*\*+([^/*][^*]*\*+)*/,
+      '/',
+    )),
+
+    param: $ => choice(
+      $.class,
+      $.paramSimple,
+      $.paramArray
+    ),
+
+    paramSimple: $ => seq(
+      field("name", $.identifier),
+      '=',
+      field("value", $.literal),
+      ';'
+    ),
+
+    paramArray: $ => seq(
+      field("name", $.identifier),
+      '[]',
+      '=',
+      $.array,
+      ';'
+    ),
+
+    array: $ => seq(
+      '{',
+      optional(seq(
+        choice($.literal, $.array),
+        repeat(seq(',', choice($.literal, $.array))),
+      )),
+      '}'
+    ),
+
+    class: $ => seq(
+      'class',
+      field("name", $.identifier),
+      optional(seq(
+        ':',
+        field("inherited", $.identifier)
+      )),
+      optional(seq(
+        '{',
+        repeat($.param),
+        '}'
+      )),
+      ';'
+    ),
+
+    literal: $ => choice(
+      $.integer,
+      $.float,
+      $.string,
+    ),
+
+    integer: _ => token(/[0-9]+/),
+
+    float: _ => token(seq(
+      /[0-9]+/,
+      '.',
+      /[0-9]+/,
+    )),
+
+    string: $ => seq(
+      '"',
+      repeat(choice(
+        $.escapeSequence,
+        $._stringContent,
+      )),
+      '"',
+    ),
+
+    // TODO: add quote escape "hello ""world"" "
+    escapeSequence: _ => token(/\\["\\nrt]/),
+    _stringContent: _ => token(prec(2, choice(
+      /[^"\\\n]/,
+      /\\[^"\\nrt]/,
+    ))),
+
+    identifier: _ => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
+
   }
 });
