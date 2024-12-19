@@ -7,6 +7,8 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const EXPONENT = seq('e', choice('+', '-'), /[0-9]+/);
+
 module.exports = grammar({
   name: "rvparam",
 
@@ -107,12 +109,18 @@ module.exports = grammar({
       $.string,
     ),
 
-    integer: _ => token(/[0-9]+/),
+    integer: _ => token(seq(
+      optional('-'),
+      /[0-9]+/,
+      optional(EXPONENT)
+    )),
 
     float: _ => token(seq(
+      optional('-'),
       /[0-9]+/,
       '.',
       /[0-9]+/,
+      optional(EXPONENT)
     )),
 
     string: $ => seq(

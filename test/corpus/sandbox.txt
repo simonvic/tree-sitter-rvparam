@@ -4,7 +4,9 @@ sandbox
 foo=69;
 class Foo {
 	foo=69;
+	foo=-69;
 	foo=6.9;
+	foo=-6.9;
 	foo="hello\nworld";
 	foo[] = {69, {"foo"}};
 	foo[] += {};
@@ -14,6 +16,14 @@ class Foo {
 	class Bar : Baz;
 	class Bar : Baz {};
 	delete Bar;
+	foo[] = {
+		1,
+		-1,
+		1e+69,
+		1e-69,
+		6.9e+69,
+		6.9e-69
+	};
 };
 
 enum
