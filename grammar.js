@@ -37,6 +37,7 @@ module.exports = grammar({
 
     entry: $ => choice(
       $.class,
+      $.enum,
       $.entrySimple,
       $.entryArray,
     ),
@@ -63,6 +64,17 @@ module.exports = grammar({
         repeat(seq(',', choice($.literal, $.array))),
       )),
       '}'
+    ),
+
+    enum: $ => seq(
+      'enum',
+      '{',
+      optional(seq(
+        $.identifier,
+        repeat(seq(',', $.identifier)),
+      )),
+      '}',
+      ';'
     ),
 
     class: $ => seq(
