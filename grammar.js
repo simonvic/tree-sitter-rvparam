@@ -138,7 +138,7 @@ module.exports = grammar({
       /\\[^"\\nrt]/,
     ))),
 
-    identifier: _ => token(/[a-zA-Z_][a-zA-Z0-9_]*/),
+    identifier: _ => token(/[a-zA-Z0-9_]+/),
 
   }
 });
