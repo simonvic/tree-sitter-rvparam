@@ -1,5 +1,23 @@
 [
   {
+    "type": "entry",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "class",
+        "named": true
+      },
+      {
+        "type": "entryArray",
+        "named": true
+      },
+      {
+        "type": "entrySimple",
+        "named": true
+      }
+    ]
+  },
+  {
     "type": "literal",
     "named": true,
     "subtypes": [
@@ -13,24 +31,6 @@
       },
       {
         "type": "string",
-        "named": true
-      }
-    ]
-  },
-  {
-    "type": "param",
-    "named": true,
-    "subtypes": [
-      {
-        "type": "class",
-        "named": true
-      },
-      {
-        "type": "paramArray",
-        "named": true
-      },
-      {
-        "type": "paramSimple",
         "named": true
       }
     ]
@@ -84,7 +84,7 @@
       "required": false,
       "types": [
         {
-          "type": "param",
+          "type": "entry",
           "named": true
         }
       ]
@@ -100,14 +100,14 @@
       "required": false,
       "types": [
         {
-          "type": "param",
+          "type": "entry",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "paramArray",
+    "type": "entryArray",
     "named": true,
     "fields": {
       "name": {
@@ -133,7 +133,7 @@
     }
   },
   {
-    "type": "paramSimple",
+    "type": "entrySimple",
     "named": true,
     "fields": {
       "name": {

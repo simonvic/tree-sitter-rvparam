@@ -7,7 +7,7 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "param"
+        "name": "entry"
       }
     },
     "commentLine": {
@@ -46,7 +46,7 @@
         ]
       }
     },
-    "param": {
+    "entry": {
       "type": "CHOICE",
       "members": [
         {
@@ -55,15 +55,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "paramSimple"
+          "name": "entrySimple"
         },
         {
           "type": "SYMBOL",
-          "name": "paramArray"
+          "name": "entryArray"
         }
       ]
     },
-    "paramSimple": {
+    "entrySimple": {
       "type": "SEQ",
       "members": [
         {
@@ -92,7 +92,7 @@
         }
       ]
     },
-    "paramArray": {
+    "entryArray": {
       "type": "SEQ",
       "members": [
         {
@@ -239,7 +239,7 @@
                   "type": "REPEAT",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "param"
+                    "name": "entry"
                   }
                 },
                 {
@@ -386,7 +386,7 @@
   "externals": [],
   "inline": [],
   "supertypes": [
-    "param",
+    "entry",
     "literal"
   ]
 }

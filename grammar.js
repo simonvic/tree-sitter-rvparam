@@ -11,7 +11,7 @@ module.exports = grammar({
   name: "rvparam",
 
   supertypes: $ => [
-    $.param,
+    $.entry,
     $.literal
   ],
 
@@ -24,7 +24,7 @@ module.exports = grammar({
   ],
 
   rules: {
-    compilationUnit: $ => repeat($.param),
+    compilationUnit: $ => repeat($.entry),
 
     commentLine: _ => token(seq('//', /[^\n]*/)),
 
@@ -35,20 +35,20 @@ module.exports = grammar({
       '/',
     )),
 
-    param: $ => choice(
+    entry: $ => choice(
       $.class,
-      $.paramSimple,
-      $.paramArray
+      $.entrySimple,
+      $.entryArray,
     ),
 
-    paramSimple: $ => seq(
+    entrySimple: $ => seq(
       field("name", $.identifier),
       '=',
       field("value", $.literal),
       ';'
     ),
 
-    paramArray: $ => seq(
+    entryArray: $ => seq(
       field("name", $.identifier),
       '[]',
       '=',
@@ -74,7 +74,7 @@ module.exports = grammar({
       )),
       optional(seq(
         '{',
-        repeat($.param),
+        repeat($.entry),
         '}'
       )),
       ';'
