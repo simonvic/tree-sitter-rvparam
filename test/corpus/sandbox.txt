@@ -24,6 +24,8 @@ class Foo {
 		6.9e+69,
 		6.9e-69
 	};
+
+	foo = "hello ""world"", how are you?";
 };
 
 enum

@@ -506,7 +506,7 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "escapeSequence"
+                "name": "quoteEscape"
               },
               {
                 "type": "SYMBOL",
@@ -521,11 +521,11 @@
         }
       ]
     },
-    "escapeSequence": {
+    "quoteEscape": {
       "type": "TOKEN",
       "content": {
-        "type": "PATTERN",
-        "value": "\\\\[\"\\\\nrt]"
+        "type": "STRING",
+        "value": "\"\""
       }
     },
     "_stringContent": {
@@ -538,7 +538,7 @@
           "members": [
             {
               "type": "PATTERN",
-              "value": "[^\"\\\\\\n]"
+              "value": "[^\"\\n]"
             },
             {
               "type": "PATTERN",

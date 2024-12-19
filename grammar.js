@@ -126,16 +126,15 @@ module.exports = grammar({
     string: $ => seq(
       '"',
       repeat(choice(
-        $.escapeSequence,
+        $.quoteEscape,
         $._stringContent,
       )),
       '"',
     ),
 
-    // TODO: add quote escape "hello ""world"" "
-    escapeSequence: _ => token(/\\["\\nrt]/),
+    quoteEscape: _ => token('""'),
     _stringContent: _ => token(prec(2, choice(
-      /[^"\\\n]/,
+      /[^"\n]/,
       /\\[^"\\nrt]/,
     ))),
 

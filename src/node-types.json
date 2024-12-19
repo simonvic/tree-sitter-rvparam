@@ -205,7 +205,7 @@
       "required": false,
       "types": [
         {
-          "type": "escapeSequence",
+          "type": "quoteEscape",
           "named": true
         }
       ]
@@ -264,10 +264,6 @@
     "named": false
   },
   {
-    "type": "escapeSequence",
-    "named": true
-  },
-  {
     "type": "float",
     "named": true
   },
@@ -277,6 +273,10 @@
   },
   {
     "type": "integer",
+    "named": true
+  },
+  {
+    "type": "quoteEscape",
     "named": true
   },
   {
