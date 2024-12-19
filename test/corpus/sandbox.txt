@@ -11,6 +11,7 @@ class Foo {
 	class Bar {};
 	class Bar : Baz;
 	class Bar : Baz {};
+	delete Bar;
 };
 
 enum

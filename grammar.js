@@ -40,6 +40,7 @@ module.exports = grammar({
       $.enum,
       $.entrySimple,
       $.entryArray,
+      $.deleteClass,
     ),
 
     entrySimple: $ => seq(
@@ -90,6 +91,10 @@ module.exports = grammar({
         '}'
       )),
       ';'
+    ),
+
+    deleteClass: $ => seq(
+      'delete', $.identifier, ';'
     ),
 
     literal: $ => choice(

@@ -8,6 +8,10 @@
         "named": true
       },
       {
+        "type": "deleteClass",
+        "named": true
+      },
+      {
         "type": "entryArray",
         "named": true
       },
@@ -105,6 +109,21 @@
       "types": [
         {
           "type": "entry",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "deleteClass",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -227,6 +246,10 @@
   {
     "type": "commentLine",
     "named": true
+  },
+  {
+    "type": "delete",
+    "named": false
   },
   {
     "type": "enum",

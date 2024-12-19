@@ -64,6 +64,10 @@
         {
           "type": "SYMBOL",
           "name": "entryArray"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "deleteClass"
         }
       ]
     },
@@ -310,6 +314,23 @@
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "deleteClass": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "delete"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
         },
         {
           "type": "STRING",
