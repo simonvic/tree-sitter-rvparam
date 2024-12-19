@@ -23,6 +23,7 @@ module.exports = grammar({
     /\s/, // whitespaces do matters, but whatever
     $.commentLine,
     $.commentBlock
+    // TODO: preprocessor directives
   ],
 
   rules: {
