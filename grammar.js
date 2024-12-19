@@ -76,13 +76,17 @@ module.exports = grammar({
 
     enum: $ => seq(
       'enum',
+      field("body", $.enumBody),
+      ';'
+    ),
+
+    enumBody: $ => seq(
       '{',
       optional(seq(
         $.identifier,
         repeat(seq(',', $.identifier)),
       )),
       '}',
-      ';'
     ),
 
     class: $ => seq(

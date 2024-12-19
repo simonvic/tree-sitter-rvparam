@@ -214,6 +214,23 @@
           "value": "enum"
         },
         {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "enumBody"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "enumBody": {
+      "type": "SEQ",
+      "members": [
+        {
           "type": "STRING",
           "value": "{"
         },
@@ -253,10 +270,6 @@
         {
           "type": "STRING",
           "value": "}"
-        },
-        {
-          "type": "STRING",
-          "value": ";"
         }
       ]
     },

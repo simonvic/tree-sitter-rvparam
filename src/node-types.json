@@ -199,6 +199,22 @@
   {
     "type": "enum",
     "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "enumBody",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "enumBody",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
