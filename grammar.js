@@ -53,7 +53,11 @@ module.exports = grammar({
     entryArray: $ => seq(
       field("name", $.identifier),
       '[]',
-      '=',
+      choice(
+        '=',
+        '+=',
+        '-=',
+      ),
       $.array,
       ';'
     ),

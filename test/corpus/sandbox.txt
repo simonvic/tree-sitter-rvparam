@@ -6,7 +6,9 @@ class Foo {
 	foo=69;
 	foo=6.9;
 	foo="hello\nworld";
-	foo[]={69, {"foo"}};
+	foo[] = {69, {"foo"}};
+	foo[] += {};
+	foo[] -= {};
 	class Bar;
 	class Bar {};
 	class Bar : Baz;
