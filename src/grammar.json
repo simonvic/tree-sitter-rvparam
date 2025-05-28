@@ -598,5 +598,6 @@
   "supertypes": [
     "entry",
     "literal"
-  ]
+  ],
+  "reserved": {}
 }

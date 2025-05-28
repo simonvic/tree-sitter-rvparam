@@ -280,11 +280,13 @@
   },
   {
     "type": "commentBlock",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "commentLine",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "delete",
